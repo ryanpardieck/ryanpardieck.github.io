@@ -2,7 +2,7 @@
  * Created by ryanpardieck on 5/8/16.
  */
 
-var extensionId = "deogklgnkeackbmhmgdfncclfflojglo";
+var extensionId = "nflmjcoaoekclickbikmjoepiekcpggl";
 
 function setChildTextNode(elementId, text) {
     document.getElementById(elementId).innerText = text;
