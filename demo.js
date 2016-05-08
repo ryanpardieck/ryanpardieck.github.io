@@ -11,26 +11,34 @@ function setChildTextNode(elementId, text) {
 
 
 
-// var port = chrome.runtime.connect(extensionId, {"name": "demoPage"});
 
 chrome.runtime.sendMessage(extensionId, {text: "beep plz"},
     function(response) {
-        // if (!response.success) console.err("test");
         setChildTextNode("demoBeepResults", response.text);
     });
 
 function requestBeep() {
     chrome.runtime.sendMessage(extensionId, {text: "beep plz"},
         function(response) {
-            // if (!response.success) console.err("test");
+            setChildTextNode("demoBeepResults", response.text);
+        });
+}
+
+function requestSearch() {
+    chrome.runtime.sendMessage(extensionId, {text: "search"},
+        function(response) {
             setChildTextNode("demoBeepResults", response.text);
         });
 }
 
 function demoBeep() {
-    // port.postMessage({text: "test"});
     requestBeep();
     setChildTextNode("demoBeepResults", "running...");
+}
+
+function demoSearch() {
+    requestSearch();
+    setChildTextNode("demoSearchResults", "running...");
 }
 
 document.addEventListener('DOMContentLoaded', function() {
