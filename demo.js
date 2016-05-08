@@ -12,22 +12,22 @@ function setChildTextNode(elementId, text) {
 
 
 
-chrome.runtime.sendMessage(extensionId, {text: "beep plz"},
+chrome.runtime.sendMessage(extensionId, {command: "beep plz"},
     function(response) {
-        setChildTextNode("demoBeepResults", response.text);
+        // setChildTextNode("demoBeepResults", response.response);
     });
 
 function requestBeep() {
-    chrome.runtime.sendMessage(extensionId, {text: "beep plz"},
+    chrome.runtime.sendMessage(extensionId, {command: "beep plz"},
         function(response) {
-            setChildTextNode("demoBeepResults", response.text);
+            setChildTextNode("demoBeepResults", response.response);
         });
 }
 
 function requestSearch() {
-    chrome.runtime.sendMessage(extensionId, {text: "search"},
+    chrome.runtime.sendMessage(extensionId, {command: "search"},
         function(response) {
-            setChildTextNode("demoBeepResults", response.text);
+            setChildTextNode("demoBeepResults", response.response);
         });
 }
 
