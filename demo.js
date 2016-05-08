@@ -13,7 +13,7 @@ function setChildTextNode(elementId, text) {
 
 // var port = chrome.runtime.connect(extensionId, {"name": "demoPage"});
 
-chrome.runtime.sendMessage(extensionId, {text: "hello"},
+chrome.runtime.sendMessage(extensionId, {text: "beep plz"},
     function(response) {
         // if (!response.success) console.err("test");
         setChildTextNode("demoBeepResults", response.text);
