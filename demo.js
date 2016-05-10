@@ -47,7 +47,13 @@ function demoSearch() {
     setChildTextNode("demoSearchResults", "running...");
 }
 
+function checkExtensionIdChange() {
+    var input = document.getElementById("extensionIdInput");
+    if (input.value !== "") extensionId = input.value;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    checkExtensionIdChange();
     document.querySelector('#demoBeep').addEventListener(
         'click', demoBeep);
     document.querySelector('#demoSearch').addEventListener(
