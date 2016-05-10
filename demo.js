@@ -34,11 +34,13 @@ function requestSearch() {
 }
 
 function demoBeep() {
+    checkExtensionIdChange();
     requestBeep();
     setChildTextNode("demoBeepResults", "running...");
 }
 
 function demoSearch() {
+    checkExtensionIdChange();
     requestSearch();
     setChildTextNode("demoSearchResults", "running...");
 }
@@ -49,7 +51,6 @@ function checkExtensionIdChange() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    checkExtensionIdChange();
     document.querySelector('#demoBeep').addEventListener(
         'click', demoBeep);
     document.querySelector('#demoSearch').addEventListener(
