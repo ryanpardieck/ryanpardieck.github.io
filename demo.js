@@ -20,20 +20,16 @@ chrome.runtime.sendMessage(extensionId, {command: "beep plz"},
 function requestBeep() {
     chrome.runtime.sendMessage(extensionId, {command: "beep plz"},
         function(response) {
-            if (response.command === "beep plz"){
                 console.log("updating beep after seeing msg");
                 setChildTextNode("demoBeepResults", response.response);
-            }
         });
 }
 
 function requestSearch() {
     chrome.runtime.sendMessage(extensionId, {command: "search"},
         function(response) {
-            if (response.command === "search") {
                 console.log("updating search after seeing msg");
                 setChildTextNode("demoSearchResults", response.response);
-            }
         });
 }
 
