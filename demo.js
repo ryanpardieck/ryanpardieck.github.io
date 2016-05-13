@@ -62,6 +62,7 @@ function requestErase() {
         function(response) {
             console.log("updating erase after seeing msg");
             setChildTextNode("demoEraseResults", JSON.stringify(response));
+            alert(JSON.stringify(response));
         });
 }
 
@@ -71,6 +72,7 @@ function requestRead() {
         function(response) {
             console.log("updating read after seeing msg");
             setChildTextNode("demoReadResults", JSON.stringify(response));
+            alert(JSON.stringify(response));
         });
 }
 
@@ -80,6 +82,7 @@ function requestWrite() {
         function(response) {
             console.log("updating write after seeing msg");
             setChildTextNode("demoWriteResults", JSON.stringify(response));
+            alert(JSON.stringify(response));
         });
 }
 
