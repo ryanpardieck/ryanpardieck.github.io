@@ -57,7 +57,7 @@ function checkExtensionIdChange() {
 }
 
 function requestErase() {
-    var message = makeCommandMsg(Commands.ERASE, "", "");
+    var message = makeCommandMsg(Commands.ERASE, "", "", makeExampleKeys());
     chrome.runtime.sendMessage(extensionId, message,
         function(response) {
             console.log("updating erase after seeing msg");
@@ -66,7 +66,7 @@ function requestErase() {
 }
 
 function requestRead() {
-    var message = makeCommandMsg(Commands.READ, "", "");
+    var message = makeCommandMsg(Commands.READ, "", "", makeExampleKeys());
     chrome.runtime.sendMessage(extensionId, message,
         function(response) {
             console.log("updating read after seeing msg");
